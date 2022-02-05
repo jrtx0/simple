@@ -1,6 +1,6 @@
 <?php
 /**
- * Simple theme designed by JRTx
+ * simple,a light theme designed by JRTx
  * 
  * @package Simple
  * @author JRTx
