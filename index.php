@@ -1,6 +1,6 @@
 <?php
 /**
- * 简单主题，移植自https://blog.caicai.me/ .
+ * Simple theme designed by JRTx
  * 
  * @package Simple
  * @author JRTx
@@ -9,52 +9,19 @@
  */
 
 if (!defined('__TYPECHO_ROOT_DIR__')) exit;
-$this->need('header.php');
+$this->need('iheader.php');
 ?>
- 
-<div class="autopagerize_page_element">
-    <div class="content">
-        <?php while($this->next()): ?> 
-            <div class="post animated fadeInDown">
-                <div class="post_title">
-                    <h2>
-                        <a href="<?php $this->permalink() ?>"><?php $this->title() ?></a>
-                    </h2>
-                </div>
 
-                <div class="list">
-                    <div class="post_content">
-                        <p><?php $this->excerpt(180, '[...]'); ?></p>
-                    </div>
-                </div>
+	<div class="outer">
+	    <ul class="list-group">
+		    <?php while($this->next()): ?>
+		        <li class="list-group-item title">
+		            <div class="date"><?php $this->date('Y年m月d日') ?></div><br>
+		            <a href="<?php $this->permalink() ?>"><?php $this->title() ?></a>
+		        </li>
+		    <?php endwhile; ?>
+	    </ul>
+	</div>
+</body>
 
-                <div class="post_footer">
-                    <div class="meta">
-                        <div class="info">
-                            <span class="field">
-                                <i class="fa fa-sun-o"></i>
-                                <span class="date"><?php $this->date('F j, Y'); ?></span>
-                            </span>
-                            <span class="field">
-                                <i class="fa fa-comment-o"></i>
-                                <span><?php $this->commentsNum('评论', '1 条评论', '%d 条评论'); ?></span>
-                            </span>
-                            <span class="field tags">
-                                <i class="fa fa-flask"></i>
-                                <?php $this->category(','); ?>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        <?php endwhile; ?>
-
-        <div class="paginator pager pagination">
-            <div class="paginator_container pagination_container">
-                <?php $this->pageNav('&laquo; 前一页', '后一页 &raquo;'); ?>
-                <div style="clear:both;height:0;"></div>
-            </div>
-        </div>
-    </div>
-</div>
-<?php $this->need('footer.php'); ?>
+</html>
