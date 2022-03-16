@@ -1,5 +1,5 @@
 # simple
  simple,a light typecho theme designed by JRTx.
 
-## 主题界面
+## screenshot
 ![](https://github.com/jrtx0/simple/blob/main/screenshot.png)
